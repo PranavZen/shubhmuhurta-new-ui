@@ -46,6 +46,7 @@ body {
   }
   @include md-tablet {
     padding: 0 0rem;
+    overflow-x: hidden;
   }
 }
 a {
@@ -235,6 +236,9 @@ ul {
       @include d-desktop {
         padding: 1rem 1rem;
       }
+      @include x-767-tablet{
+        padding: 0rem 1rem;
+      }
       .dashBtnWrap {
         display: flex;
         align-items: center;
@@ -346,11 +350,55 @@ ul {
       background-color: transparent;
       &.sticky {
         background-color: #fff;
+        box-shadow: 0px 0px 25px -15px #000;
+        .navBarWrap {
+          .collapse {
+            .navbar-nav {
+              border-right: 2px solid #313131;
+              .nav-item {
+                .nav-link {
+                  color: #313131;
+                  &.active {
+                    color: #000;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
       .navBarWrap {
-        .logoWrap {
-          width: 60%;
-          margin: 0;
+        .navbar-brand {
+          .logoWrap {
+            width: 40%;
+            margin: 0;
+          }
+        }
+        .collapse {
+          .navbar-nav {
+            gap: 2rem;
+            border-right: 2px solid #a8a8a8;
+            padding-right: 2rem;
+            .nav-item {
+              .nav-link {
+                font-size: 1.8rem;
+                font-weight: 400;
+                color: #a8a8a8;
+                &.active {
+                  font-weight: 600;
+                  color: #fff;
+                }
+              }
+            }
+          }
+          .btnWrap {
+            @include common-btn;
+            margin-left: 2rem;
+            .btn{
+              width: 11.8rem;
+             
+            }
+          }
         }
       }
     }
@@ -369,6 +417,13 @@ ul {
     width: 100%;
     padding: 15rem 11rem 3rem;
     position: relative;
+    @include md-tablet {
+      padding: 15rem 2rem 0rem;
+    }
+    @include x-767-tablet {
+      height: 120rem;
+      padding: 9rem 2rem 0rem;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -386,46 +441,47 @@ ul {
       z-index: 9;
       position: relative;
       padding-right: 8rem;
+      @include md-tablet {
+        flex-direction: column;
+        padding-right: 0rem;
+      }
       .bannerLefBox {
+        @include md-tablet{
+          text-align: center;
+        }
         h1 {
           font-size: 7.1rem;
           font-weight: 600;
           color: #fff;
+          @include md-tablet{
+            font-size: 5.2rem;
+          }
+          @include x-767-tablet {
+            font-size: 3.2rem;
+          }
         }
         p {
           font-size: 1.8rem;
           font-weight: 400;
           color: #fff;
+          @include x-767-tablet{
+            font-size: 1.4rem;
+          }
         }
         .btnWrap {
           margin-top: 2rem;
-          .btn {
-            width: 17.8rem;
-            height: 4.5rem;
-            background: linear-gradient(
-              94deg,
-              rgba(71, 12, 12, 1) 39%,
-              rgba(198, 3, 3, 1) 100%
-            );
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            border-radius: 5rem;
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: #fff;
-            border: 0;
-            .arrowBtnSpan {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 3.5rem;
-              height: 3.5rem;
-              background: #fff;
-              border-radius: 5rem;
-            }
+          @include common-btn;
+         @include md-tablet{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 4rem;
+         }
+         .btn{
+          @include x-767-tablet{
+            font-size: 1.6rem;
           }
+         }
         }
       }
       .bannerRightBox {
@@ -439,6 +495,9 @@ ul {
           text-align: center;
           padding: 3rem 5rem 1rem;
           border-bottom: 0.2rem solid #fff;
+          @include x-767-tablet{
+            padding: 3rem 1rem 1rem;
+          }
           h2 {
             font-size: 1.8rem;
             color: #fff;
@@ -479,6 +538,9 @@ ul {
                 font-size: 1.6rem;
                 font-weight: 400;
                 color: #a8a8a8;
+                @include md-tablet{
+                  padding: 0 0rem 0rem 5.6rem;
+                }
                 &:focus {
                   outline: none;
                   box-shadow: none;
@@ -537,6 +599,12 @@ ul {
       z-index: 9;
       position: relative;
       margin-top: 2rem;
+      @include md-tablet {
+        margin-top: 10rem;
+      }
+      @include x-767-tablet{
+        margin-top: 5rem;
+      }
       ul {
         display: flex;
         justify-content: flex-start;
@@ -624,19 +692,38 @@ ul {
   position: relative;
   overflow: hidden;
   @include bgBlob;
+  @include md-tablet{
+    padding: 6rem 2rem 0rem;
+    &::after{
+      width: 100%;
+    }
+  }
+  @include x-767-tablet{
+    padding: 3rem 2rem 0rem;
+  }
   .achieveRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include md-tablet{
+      flex-direction: column-reverse;
+    }
     .leftboxImgWrap {
       img {
         z-index: 1;
         position: relative;
       }
+      @include md-tablet{
+        text-align: center
+      }
     }
     .aciveRightBoxWrap {
       .contentWraps {
         @include contentBox;
+        @include md-tablet{
+          text-align: center;
+          margin-bottom: 4rem;
+        }
       }
       .achiveBoxRow {
         row-gap: 1.5rem;
@@ -689,14 +776,34 @@ ul {
   background-color: #ffeeee;
   padding: 8rem 11rem 8rem;
   position: relative;
+  @include md-tablet{
+    padding: 6rem 2rem 6rem;
+  }
+  @include x-767-tablet{
+    padding: 3rem 2rem 0rem;
+  }
   .abtRow {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    @include md-tablet{
+      flex-direction: column;
+    }
+    .col-12{
+      &:last-child{
+        @include x-767-tablet{
+          display: none;
+        }
+      }
+    }
     .aciveRightBoxWrap {
       .contentWraps {
         @include contentBox;
+        @include md-tablet{
+          text-align: center;
+          margin-bottom: 4rem;
+        }
       }
     }
 
@@ -818,6 +925,9 @@ ul {
       display: flex;
       justify-content: center;
       align-items: center;
+      @include md-tablet{
+        margin-top: 3rem;
+      }
     }
   }
 }
@@ -825,10 +935,19 @@ ul {
 #storiesSection {
   background-color: #fff;
   padding: 8rem 11rem 8rem;
+  @include md-tablet{
+    padding: 6rem 2rem 4rem;
+  }
+  @include x-767-tablet{
+    padding: 3rem 2rem 2rem;
+  }
   .storiesRow {
     .aciveRightBoxWrap {
       width: 40%;
       margin: 0 auto;
+      @include md-tablet{
+        width: 100%;
+      }
       .contentWraps {
         @include contentBox;
         text-align: center;
@@ -842,7 +961,7 @@ ul {
         height: fit-content;
         position: relative;
         padding-bottom: 50px;
-        .swiper-wrapper{
+        .swiper-wrapper {
           padding-top: 3rem;
         }
       }
@@ -860,7 +979,7 @@ ul {
 
       .swiper-slide .ImgHolder {
         display: flex;
-        max-width: 33.333%;
+        width: 50%;
         height: 100%;
         overflow: hidden;
       }
@@ -911,13 +1030,18 @@ ul {
       }
 
       .swiper-pagination-bullet {
-        background-color: white;
+        background-color: #d9d9d9;
         opacity: 1;
-        border: 1px solid #4361ee;
+        height: 1.5rem;
+        width: 1.5rem;
+        @include x-767-tablet{
+          height: .8rem;
+          width: .8rem;
+        }
       }
 
       .swiper-pagination-bullet-active {
-        background-color: #4361ee;
+        background-color: #6d2323;
       }
 
       .swiper-button {
@@ -937,13 +1061,9 @@ ul {
         }
       }
 
-      @media (max-width: 500px) {
-        .swiper-container {
-          width: 70vw;
-        }
-      }
+     
 
-      @media (max-width: 300px) {
+      @media (max-width: 767px) {
         .swiper-container {
           width: 100%;
         }
@@ -968,27 +1088,55 @@ ul {
   position: relative;
   background: #ffeeee;
   overflow: hidden;
+  @include md-tablet{
+    padding: 6rem 2rem 6rem;
+  }
+  @include x-767-tablet{
+    padding: 3rem 2rem 3rem;
+  }
   .achieveRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include md-tablet{
+      flex-direction: column-reverse;
+    }
     .leftboxImgWrap {
       text-align: center;
       padding-bottom: 7rem;
+      @include md-tablet{
+        padding-bottom: 0;
+      }
       img {
         z-index: 1;
         position: relative;
       }
     }
     .aciveRightBoxWrap {
+      @include md-tablet{
+        margin-bottom: 8rem;
+      }
       .contentWraps {
         @include contentBox;
+        @include md-tablet{
+          text-align: center;
+        }
       }
       .storeLinksWrap {
         margin-top: 3rem;
         ul {
           display: flex;
           gap: 2rem;
+          @include md-tablet{
+            justify-content: center;
+          }
+          li{
+            a{
+              img{
+                width: 100%;
+              }
+            }
+          }
         }
       }
       .achiveBoxRow {
@@ -1042,14 +1190,27 @@ ul {
 #testimonialSection {
   background-color: #fff;
   padding: 19rem 11rem 18rem;
+  @include md-tablet{
+    padding: 6rem 2rem 25rem;
+  }
+  @include x-767-tablet{
+    padding: 3rem 2rem 27rem;
+  }
   .testimonialRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    @include md-tablet{
+      flex-direction: column;
+        gap: 24rem;
+    }
     .aciveRightBoxWrap {
       .contentWraps {
         @include contentBox;
+        @include md-tablet{
+          text-align: center;
+        }
       }
     }
     .layer {
@@ -1069,6 +1230,10 @@ ul {
       height: 13rem;
       top: -70px;
       left: -15%;
+      @include x-767-tablet{
+        padding: 15px 10px;
+        height: 16rem;
+      }
     }
     .layer:hover .profile-card {
       animation-play-state: paused;
@@ -1079,6 +1244,14 @@ ul {
     .details {
       .userDetailsWrap {
         justify-content: space-between;
+        @include x-767-tablet{
+          gap: 1rem;
+        }
+        .justify-content-end{
+          @include x-767-tablet{
+            justify-content: flex-start !important;
+          }
+        }
         .userBox {
           display: flex;
           justify-content: flex-start;
@@ -1123,6 +1296,9 @@ ul {
             i {
               font-size: 1.6rem;
               color: #6d2323;
+              @include x-767-tablet{
+                font-size: 1.2rem;
+              }
             }
           }
         }
@@ -1138,6 +1314,9 @@ ul {
           // width: 90%;
           // overflow: hidden;
           // text-overflow: ellipsis;
+          @include x-767-tablet{
+            font-size: 1.2rem;
+          }
         }
       }
     }
@@ -1178,10 +1357,19 @@ ul {
   width: 100%;
   height: auto;
   padding: 8rem 11rem 10rem;
+  @include md-tablet{
+    padding: 6rem 2rem 7rem;
+  }
+  @include x-767-tablet{
+    padding: 3rem 2rem 4rem;
+  }
   .plansRow {
     .aciveRightBoxWrap {
       width: 40%;
       margin: 0 auto;
+      @include md-tablet{
+        width: 100%;
+      }
       .contentWraps {
         @include contentBox;
         text-align: center;
@@ -1192,6 +1380,9 @@ ul {
     .cardsRow {
       width: 70%;
       margin: 0 auto;
+      @include md-tablet{
+        width: 100%;
+      }
       .pCard_card {
         width: 100%;
       }
@@ -2936,8 +3127,14 @@ ul {
   @include d-desktop {
     padding: 3rem 4rem 7rem;
   }
+  @include md-tablet{
+    padding: 3rem 2rem 3rem;
+  }
   @include x-767-tablet {
     padding: 3rem 1.5rem 5rem;
+  }
+  @include x-767-tablet{
+    padding: 3rem 1.5rem 0rem;
   }
   .footerContainer {
     .footerRow {
@@ -3073,6 +3270,9 @@ ul {
               font-weight: 300;
               line-height: 1.5;
               color: #fff;
+              @include x-767-tablet{
+                text-align: center;
+              }
               a {
                 font-size: 1.4rem;
                 font-weight: 300;
