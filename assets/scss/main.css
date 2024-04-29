@@ -223,7 +223,7 @@ ul li {
   z-index: 999;
 }
 #topHeader #headerSection .navBarWrap {
-  padding: 1rem 11rem;
+  padding: 0.5rem 11rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -383,8 +383,27 @@ ul li {
   color: #000;
 }
 #homePage #topHeader #headerSection .navBarWrap .navbar-brand .logoWrap {
-  width: 40%;
+  width: 60%;
   margin: 0;
+}
+@media (max-width: 767px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-brand .logoWrap {
+    width: 40%;
+  }
+}
+#homePage #topHeader #headerSection .navBarWrap .collapse {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  transition: left 0.3s ease;
+  display: block !important;
+}
+#homePage #topHeader #headerSection .navBarWrap .collapse.show {
+  background-color: red;
+  height: 100vh;
+  width: 80%;
+  left: 0;
+  transition: left 0.3s ease;
 }
 #homePage #topHeader #headerSection .navBarWrap .collapse .navbar-nav {
   gap: 2rem;
@@ -443,7 +462,7 @@ ul li {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
+  height: auto;
   width: 100%;
   padding: 15rem 11rem 3rem;
   position: relative;
@@ -704,9 +723,14 @@ ul li {
 #homePage #bannerSection .bannerSocialLinksWrap .downArrowBtnWrap {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 48.5%;
   transform: translateX(-50%);
   animation: ca3_fade_move_down 2s ease-in-out infinite;
+}
+@media (max-width: 834px) {
+  #homePage #bannerSection .bannerSocialLinksWrap .downArrowBtnWrap {
+    left: 43.5%;
+  }
 }
 @keyframes ca3_fade_move_down {
   0% {
