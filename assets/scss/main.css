@@ -373,13 +373,35 @@ ul li {
   background-color: #fff;
   box-shadow: 0px 0px 25px -15px #000;
 }
-#homePage #topHeader #headerSection.sticky .navBarWrap .collapse .navbar-nav {
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-toggler .navbar-toggler-icon i {
+  font-size: 2.4rem;
+  color: #000;
+}
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-toggler .navbar-toggler-icon .icon-menu.hide {
+  display: none;
+}
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-toggler .navbar-toggler-icon .crossBtn {
+  display: none;
+}
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-toggler .navbar-toggler-icon .crossBtn.hide {
+  display: block;
+}
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-collapse .navbar-nav {
   border-right: 2px solid #313131;
 }
-#homePage #topHeader #headerSection.sticky .navBarWrap .collapse .navbar-nav .nav-item .nav-link {
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection.sticky .navBarWrap .navbar-collapse .navbar-nav {
+    border: 0;
+  }
+}
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-collapse .navbar-nav .nav-item .nav-link {
   color: #313131;
 }
-#homePage #topHeader #headerSection.sticky .navBarWrap .collapse .navbar-nav .nav-item .nav-link.active {
+#homePage #topHeader #headerSection.sticky .navBarWrap .navbar-collapse .navbar-nav .nav-item .nav-link.active {
   color: #000;
 }
 #homePage #topHeader #headerSection .navBarWrap .navbar-brand .logoWrap {
@@ -391,38 +413,94 @@ ul li {
     width: 40%;
   }
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse {
-  position: absolute;
-  left: -100%;
-  top: 0;
-  transition: left 0.3s ease;
-  display: block !important;
+#homePage #topHeader #headerSection .navBarWrap .navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse.show {
-  background-color: red;
-  height: 100vh;
-  width: 80%;
-  left: 0;
-  transition: left 0.3s ease;
+#homePage #topHeader #headerSection .navBarWrap .navbar-toggler .navbar-toggler-icon i {
+  font-size: 2.4rem;
+  color: #fff;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .navbar-nav {
+#homePage #topHeader #headerSection .navBarWrap .navbar-toggler .navbar-toggler-icon .icon-menu.hide {
+  display: none;
+}
+#homePage #topHeader #headerSection .navBarWrap .navbar-toggler .navbar-toggler-icon .crossBtn {
+  display: none;
+}
+#homePage #topHeader #headerSection .navBarWrap .navbar-toggler .navbar-toggler-icon .crossBtn.hide {
+  display: block;
+}
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse {
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    position: absolute;
+    display: block;
+    left: -100%;
+    top: -1rem;
+    width: 80%;
+    padding: 4rem 2rem;
+    transition: left 0.3s linear;
+    box-shadow: 0 0 87px 0 rgba(0, 0, 0, 0.09);
+  }
+}
+@media (max-width: 834px) and (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse {
+    width: 50%;
+  }
+}
+@media (max-width: 834px) and (max-width: 767px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse {
+    width: 80%;
+  }
+}
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse:not(.show) {
+    display: block;
+  }
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse.show {
+    left: -1rem;
+  }
+}
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .navbar-nav {
   gap: 2rem;
   border-right: 2px solid #a8a8a8;
   padding-right: 2rem;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .navbar-nav .nav-item .nav-link {
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse .navbar-nav {
+    border: 0;
+    padding-right: 0;
+    transition: none;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .navbar-nav .nav-item .nav-link {
   font-size: 1.8rem;
   font-weight: 400;
   color: #a8a8a8;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .navbar-nav .nav-item .nav-link.active {
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse .navbar-nav .nav-item .nav-link {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .navbar-nav .nav-item .nav-link.active {
   font-weight: 600;
   color: #fff;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .btnWrap {
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse .navbar-nav .nav-item .nav-link.active {
+    color: #000;
+  }
+}
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap {
   margin-left: 2rem;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .btnWrap .btn {
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap .btn {
   width: 17.8rem;
   height: 4.5rem;
   background: linear-gradient(94deg, rgb(71, 12, 12) 39%, rgb(198, 3, 3) 100%);
@@ -437,7 +515,7 @@ ul li {
   justify-content: space-between;
   padding-left: 2rem;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .btnWrap .btn .arrowBtnSpan {
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap .btn .arrowBtnSpan {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -446,15 +524,34 @@ ul li {
   background: #fff;
   border-radius: 5rem;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .btnWrap .btn:focus {
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap .btn:focus {
   outline: none;
   box-shadow: none;
 }
-#homePage #topHeader #headerSection .navBarWrap .collapse .btnWrap .btn {
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap {
+    margin-left: 0;
+  }
+}
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap {
+    display: flex;
+    justify-content: center;
+  }
+}
+#homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap .btn {
   width: 11.8rem;
 }
-#homePage .h100 {
-  height: 100vh;
+@media (max-width: 834px) {
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap .btn {
+    width: 10.8rem;
+    height: 4rem;
+    font-size: 1.4rem;
+  }
+  #homePage #topHeader #headerSection .navBarWrap .navbar-collapse .btnWrap .btn .arrowBtnSpan {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 #homePage #bannerSection {
   background-image: url(../images/body/home-banner.png);
@@ -469,13 +566,13 @@ ul li {
 }
 @media (max-width: 834px) {
   #homePage #bannerSection {
-    padding: 15rem 2rem 0rem;
+    padding: 15rem 11rem 4rem;
   }
 }
 @media (max-width: 767px) {
   #homePage #bannerSection {
     height: 120rem;
-    padding: 9rem 2rem 0rem;
+    padding: 9rem 2rem 4rem;
   }
 }
 #homePage #bannerSection::before {
@@ -496,13 +593,15 @@ ul li {
   position: relative;
   padding-right: 8rem;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #homePage #bannerSection .bannerContentWrap {
+    align-items: center;
     flex-direction: column;
     padding-right: 0rem;
+    gap: 2rem;
   }
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #homePage #bannerSection .bannerContentWrap .bannerLefBox {
     text-align: center;
   }
@@ -512,7 +611,7 @@ ul li {
   font-weight: 600;
   color: #fff;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #homePage #bannerSection .bannerContentWrap .bannerLefBox h1 {
     font-size: 5.2rem;
   }
@@ -563,7 +662,7 @@ ul li {
   outline: none;
   box-shadow: none;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #homePage #bannerSection .bannerContentWrap .bannerLefBox .btnWrap {
     display: flex;
     justify-content: center;
@@ -635,7 +734,7 @@ ul li {
   font-weight: 400;
   color: #a8a8a8;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #homePage #bannerSection .bannerContentWrap .bannerRightBox .searchFormWrap form .formRow .form-select {
     padding: 0 0rem 0rem 5.6rem;
   }
@@ -771,6 +870,14 @@ ul li {
     width: 100%;
   }
 }
+@media (max-width: 1024px) {
+  #achievmentSection {
+    padding: 6rem 11rem 6rem;
+  }
+  #achievmentSection::after {
+    content: none;
+  }
+}
 @media (max-width: 767px) {
   #achievmentSection {
     padding: 3rem 2rem 0rem;
@@ -781,16 +888,19 @@ ul li {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #achievmentSection .achieveRow {
     flex-direction: column-reverse;
+  }
+  #achievmentSection .achieveRow .col-lg-5 {
+    display: none;
   }
 }
 #achievmentSection .achieveRow .leftboxImgWrap img {
   z-index: 1;
   position: relative;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #achievmentSection .achieveRow .leftboxImgWrap {
     text-align: center;
   }
@@ -821,7 +931,7 @@ ul li {
     font-size: 1.4rem;
   }
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #achievmentSection .achieveRow .aciveRightBoxWrap .contentWraps {
     text-align: center;
     margin-bottom: 4rem;
@@ -878,7 +988,7 @@ ul li {
 }
 @media (max-width: 834px) {
   #aboutUsSection {
-    padding: 6rem 2rem 6rem;
+    padding: 6rem 11rem 6rem;
   }
 }
 @media (max-width: 767px) {
@@ -892,9 +1002,10 @@ ul li {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #aboutUsSection .abtRow {
     flex-direction: column;
+    gap: 4rem;
   }
 }
 @media (max-width: 767px) {
@@ -928,7 +1039,7 @@ ul li {
     font-size: 1.4rem;
   }
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #aboutUsSection .abtRow .aciveRightBoxWrap .contentWraps {
     text-align: center;
     margin-bottom: 4rem;
@@ -1070,7 +1181,7 @@ ul li {
   width: 40%;
   margin: 0 auto;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #storiesSection .storiesRow .aciveRightBoxWrap {
     width: 100%;
   }
@@ -1232,7 +1343,7 @@ ul li {
 }
 @media (max-width: 834px) {
   #googleSection {
-    padding: 6rem 2rem 6rem;
+    padding: 6rem 11rem 6rem;
   }
 }
 @media (max-width: 767px) {
@@ -1364,7 +1475,7 @@ ul li {
 }
 @media (max-width: 834px) {
   #testimonialSection {
-    padding: 6rem 2rem 25rem;
+    padding: 6rem 11rem 32rem;
   }
 }
 @media (max-width: 767px) {
@@ -1432,6 +1543,11 @@ ul li {
   height: 13rem;
   top: -70px;
   left: -15%;
+}
+@media (max-width: 1024px) {
+  #testimonialSection .testimonialRow .slider .profile-card {
+    height: 17rem;
+  }
 }
 @media (max-width: 767px) {
   #testimonialSection .testimonialRow .slider .profile-card {
@@ -1570,7 +1686,7 @@ ul li {
   width: 40%;
   margin: 0 auto;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #plansSection .plansRow .aciveRightBoxWrap {
     width: 100%;
   }
@@ -2063,7 +2179,7 @@ ul li {
   width: 70%;
   margin: 0 auto;
 }
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
   #plansSection .plansRow .cardsRow {
     width: 100%;
   }
@@ -6135,4 +6251,220 @@ ul li {
 #frame .content .message-input .wrap button:focus {
   outline: none;
   box-shadow: none;
+}
+
+.commonForm .modal-dialog .modal-content {
+  padding: 5rem 5rem 5rem 5rem;
+  border-radius: 0.8rem;
+  background-color: #ffe1e1;
+}
+.commonForm .modal-dialog .modal-content .btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  opacity: 1;
+  font-size: 1.6rem;
+  z-index: 1;
+  background: transparent;
+}
+.commonForm .modal-dialog .modal-content .btn-close:focus {
+  outline: none;
+  box-shadow: none;
+}
+.commonForm .modal-dialog .modal-content .modal-body {
+  background: #fff;
+  padding: 3rem 5rem;
+  border-radius: 0.8rem;
+}
+.commonForm .modal-dialog .modal-content .modal-body h5 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1a1818;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .showPswd {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .showPswd i {
+  font-size: 1.8rem;
+  color: #565656;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .form-control {
+  border: 0.1rem solid #a8a8a8;
+  border-radius: 0.4rem;
+  height: 4.8rem;
+  color: #989898;
+  font-size: 1.6rem;
+  font-weight: 400;
+  position: relative;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .form-control:focus ~ label {
+  top: 3px;
+  transform: scale(0.65) translateY(-1.2rem) translateX(0.15rem);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #470c0c;
+  opacity: 1;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .form-control:not(:-moz-placeholder-shown) ~ label, .commonForm .modal-dialog .modal-content .modal-body form .form-floating .form-control:not(:-moz-placeholder-shown) .form-floating > .form-select ~ label {
+  opacity: 0.65;
+  transform: scale(0.65) translateY(-1.2rem) translateX(0.15rem);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #470c0c;
+  opacity: 1;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .form-control:not(:placeholder-shown) ~ label,
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating .form-control:not(:placeholder-shown) .form-floating > .form-select ~ label {
+  opacity: 0.65;
+  transform: scale(0.65) translateY(-1.2rem) translateX(0.15rem);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #470c0c;
+  opacity: 1;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-floating label {
+  top: 3px;
+  color: #989898;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .frgtPswdWrap {
+  text-align: right;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .frgtPswdWrap a {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #989898;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .frgtPswdWrap .resendOTPText {
+  color: #440c0c;
+  font-weight: 600;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .tagLabel {
+  font-size: 1.6rem;
+  color: #494848;
+  font-weight: 400;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .btnLogin {
+  height: 4.8rem;
+  background: #470c0c;
+  border-radius: 0.4rem;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .btnLogin:hover {
+  background-color: #ffe1e1;
+  color: #6d2323;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .btnLogin:focus {
+  outline: none;
+  box-shadow: none;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-check-label {
+  font-size: 1.4rem;
+  color: #989898;
+  font-weight: 400;
+  line-height: 2;
+  cursor: pointer;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-check-input[type=checkbox] {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-check-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .form-check-input:checked {
+  background-color: rgb(71, 12, 12);
+  border-color: rgb(71, 12, 12);
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 2rem;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap.noPsedo::before, .commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap.noPsedo::after {
+  content: none;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap.noPsedo .btnReg {
+  width: 60%;
+  background-color: #470c0c;
+  color: #fff;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 25%;
+  height: 0.1rem;
+  background-color: #d6d6d6;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 25%;
+  height: 0.1rem;
+  background-color: #d6d6d6;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap .btnReg {
+  background-color: #ffe1e1;
+  width: 14rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #6d2323;
+  border-radius: 0.4rem;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap .btnReg:focus {
+  outline: none;
+  box-shadow: none;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap .btnReg.loginBtns {
+  background-color: #ffe1e1;
+  color: #6d2323;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap .btnReg.loginBtns:hover {
+  background-color: #470c0c;
+  color: #fff;
+}
+.commonForm .modal-dialog .modal-content .modal-body form .regBtnWrap .btnReg:hover {
+  background-color: #470c0c;
+  color: #fff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }/*# sourceMappingURL=main.css.map */

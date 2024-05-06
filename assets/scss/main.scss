@@ -220,7 +220,7 @@ ul {
       z-index: 999;
     }
     .navBarWrap {
-      padding: .5rem 11rem;
+      padding: 0.5rem 11rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -236,7 +236,7 @@ ul {
       @include d-desktop {
         padding: 1rem 1rem;
       }
-      @include x-767-tablet{
+      @include x-767-tablet {
         padding: 0rem 1rem;
       }
       .dashBtnWrap {
@@ -352,9 +352,35 @@ ul {
         background-color: #fff;
         box-shadow: 0px 0px 25px -15px #000;
         .navBarWrap {
-          .collapse {
+          .navbar-toggler {
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+            .navbar-toggler-icon {
+              i {
+                font-size: 2.4rem;
+                color: #000;
+              }
+              .icon-menu {
+                &.hide {
+                  display: none;
+                }
+              }
+              .crossBtn {
+                display: none;
+                &.hide {
+                  display: block;
+                }
+              }
+            }
+          }
+          .navbar-collapse {
             .navbar-nav {
               border-right: 2px solid #313131;
+              @include md-tablet {
+                border: 0;
+              }
               .nav-item {
                 .nav-link {
                   color: #313131;
@@ -364,7 +390,6 @@ ul {
                 }
               }
             }
-            
           }
         }
       }
@@ -373,36 +398,86 @@ ul {
           .logoWrap {
             width: 60%;
             margin: 0;
-            @include x-767-tablet{
+            @include x-767-tablet {
               width: 40%;
             }
           }
         }
-        .collapse {
-          position: absolute;
-          left: -100%;
-          top: 0;
-          transition: left .3s ease;
-          display: block !important;
-          &.show{
-            background-color: red;
+        .navbar-toggler {
+          &:focus {
+            box-shadow: none;
+            outline: none;
+          }
+          .navbar-toggler-icon {
+            i {
+              font-size: 2.4rem;
+              color: #fff;
+            }
+            .icon-menu {
+              &.hide {
+                display: none;
+              }
+            }
+            .crossBtn {
+              display: none;
+              &.hide {
+                display: block;
+              }
+            }
+          }
+        }
+        .navbar-collapse {
+          @include md-tablet {
             height: 100vh;
+            overflow-y: auto;
+            background: #fff;
+            position: absolute;
+            display: block;
+            left: -100%;
+            top: -1rem;
             width: 80%;
-            left: 0;
-            transition: left .3s ease;
+            padding: 4rem 2rem;
+            transition: left 0.3s linear;
+            box-shadow: 0 0 87px 0 rgba(0, 0, 0, 0.09);
+            @include md-tablet {
+              width: 50%;
+            }
+            @include x-767-tablet {
+              width: 80%;
+            }
+            &:not(.show) {
+              display: block;
+            }
+            &.show {
+              left: -1rem;
+            }
           }
           .navbar-nav {
             gap: 2rem;
             border-right: 2px solid #a8a8a8;
             padding-right: 2rem;
+            @include md-tablet {
+              border: 0;
+              padding-right: 0;
+              transition: none;
+              gap: 1rem;
+              margin-bottom: 2rem;
+            }
             .nav-item {
               .nav-link {
                 font-size: 1.8rem;
                 font-weight: 400;
                 color: #a8a8a8;
+                @include md-tablet {
+                  font-size: 1.6rem;
+                  text-align: center;
+                }
                 &.active {
                   font-weight: 600;
                   color: #fff;
+                  @include md-tablet {
+                    color: #000;
+                  }
                 }
               }
             }
@@ -410,18 +485,31 @@ ul {
           .btnWrap {
             @include common-btn;
             margin-left: 2rem;
-            .btn{
+            @include md-tablet {
+              margin-left: 0;
+            }
+            @include md-tablet {
+              display: flex;
+              justify-content: center;
+            }
+            .btn {
               width: 11.8rem;
-             
+              @include md-tablet {
+                width: 10.8rem;
+                height: 4rem;
+                font-size: 1.4rem;
+                .arrowBtnSpan {
+                  width: 3rem;
+                  height: 3rem;
+                }
+              }
             }
           }
         }
       }
     }
   }
-  .h100 {
-    height: 100vh;
-  }
+
   // BannerSection Start
   #bannerSection {
     background-image: url(../images/body/home-banner.png);
@@ -429,16 +517,16 @@ ul {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    height:auto;
+    height: auto;
     width: 100%;
     padding: 15rem 11rem 3rem;
     position: relative;
     @include md-tablet {
-      padding: 15rem 2rem 0rem;
+      padding: 15rem 11rem 4rem;
     }
     @include x-767-tablet {
       height: 120rem;
-      padding: 9rem 2rem 0rem;
+      padding: 9rem 2rem 4rem;
     }
     &::before {
       content: "";
@@ -457,19 +545,21 @@ ul {
       z-index: 9;
       position: relative;
       padding-right: 8rem;
-      @include md-tablet {
+      @include d-desktop {
+        align-items: center;
         flex-direction: column;
         padding-right: 0rem;
+        gap: 2rem;
       }
       .bannerLefBox {
-        @include md-tablet{
+        @include d-desktop {
           text-align: center;
         }
         h1 {
           font-size: 7.1rem;
           font-weight: 600;
           color: #fff;
-          @include md-tablet{
+          @include d-desktop {
             font-size: 5.2rem;
           }
           @include x-767-tablet {
@@ -480,24 +570,24 @@ ul {
           font-size: 1.8rem;
           font-weight: 400;
           color: #fff;
-          @include x-767-tablet{
+          @include x-767-tablet {
             font-size: 1.4rem;
           }
         }
         .btnWrap {
           margin-top: 2rem;
           @include common-btn;
-         @include md-tablet{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 4rem;
-         }
-         .btn{
-          @include x-767-tablet{
-            font-size: 1.6rem;
+          @include d-desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4rem;
           }
-         }
+          .btn {
+            @include x-767-tablet {
+              font-size: 1.6rem;
+            }
+          }
         }
       }
       .bannerRightBox {
@@ -511,7 +601,7 @@ ul {
           text-align: center;
           padding: 3rem 5rem 1rem;
           border-bottom: 0.2rem solid #fff;
-          @include x-767-tablet{
+          @include x-767-tablet {
             padding: 3rem 1rem 1rem;
           }
           h2 {
@@ -554,7 +644,7 @@ ul {
                 font-size: 1.6rem;
                 font-weight: 400;
                 color: #a8a8a8;
-                @include md-tablet{
+                @include d-desktop {
                   padding: 0 0rem 0rem 5.6rem;
                 }
                 &:focus {
@@ -618,7 +708,7 @@ ul {
       @include md-tablet {
         margin-top: 10rem;
       }
-      @include x-767-tablet{
+      @include x-767-tablet {
         margin-top: 5rem;
       }
       ul {
@@ -658,7 +748,7 @@ ul {
         -webkit-animation: ca3_fade_move_down 2s ease-in-out infinite;
         -moz-animation: ca3_fade_move_down 2s ease-in-out infinite;
         animation: ca3_fade_move_down 2s ease-in-out infinite;
-        @include md-tablet{
+        @include md-tablet {
           left: 43.5%;
         }
       }
@@ -711,35 +801,44 @@ ul {
   position: relative;
   overflow: hidden;
   @include bgBlob;
-  @include md-tablet{
+  @include md-tablet {
     padding: 6rem 2rem 0rem;
-    &::after{
+    &::after {
       width: 100%;
     }
   }
-  @include x-767-tablet{
+  @include d-desktop {
+    padding: 6rem 11rem 6rem;
+    &::after {
+      content: none;
+    }
+  }
+  @include x-767-tablet {
     padding: 3rem 2rem 0rem;
   }
   .achieveRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include md-tablet{
+    @include d-desktop {
       flex-direction: column-reverse;
+      .col-lg-5 {
+        display: none;
+      }
     }
     .leftboxImgWrap {
       img {
         z-index: 1;
         position: relative;
       }
-      @include md-tablet{
-        text-align: center
+      @include d-desktop {
+        text-align: center;
       }
     }
     .aciveRightBoxWrap {
       .contentWraps {
         @include contentBox;
-        @include md-tablet{
+        @include d-desktop {
           text-align: center;
           margin-bottom: 4rem;
         }
@@ -795,10 +894,10 @@ ul {
   background-color: #ffeeee;
   padding: 8rem 11rem 8rem;
   position: relative;
-  @include md-tablet{
-    padding: 6rem 2rem 6rem;
+  @include md-tablet {
+    padding: 6rem 11rem 6rem;
   }
-  @include x-767-tablet{
+  @include x-767-tablet {
     padding: 3rem 2rem 0rem;
   }
   .abtRow {
@@ -806,12 +905,13 @@ ul {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    @include md-tablet{
+    @include d-desktop {
       flex-direction: column;
+      gap: 4rem;
     }
-    .col-12{
-      &:last-child{
-        @include x-767-tablet{
+    .col-12 {
+      &:last-child {
+        @include x-767-tablet {
           display: none;
         }
       }
@@ -819,7 +919,7 @@ ul {
     .aciveRightBoxWrap {
       .contentWraps {
         @include contentBox;
-        @include md-tablet{
+        @include d-desktop {
           text-align: center;
           margin-bottom: 4rem;
         }
@@ -944,7 +1044,7 @@ ul {
       display: flex;
       justify-content: center;
       align-items: center;
-      @include md-tablet{
+      @include md-tablet {
         margin-top: 3rem;
       }
     }
@@ -954,17 +1054,17 @@ ul {
 #storiesSection {
   background-color: #fff;
   padding: 8rem 11rem 8rem;
-  @include md-tablet{
+  @include md-tablet {
     padding: 6rem 2rem 4rem;
   }
-  @include x-767-tablet{
+  @include x-767-tablet {
     padding: 3rem 2rem 2rem;
   }
   .storiesRow {
     .aciveRightBoxWrap {
       width: 40%;
       margin: 0 auto;
-      @include md-tablet{
+      @include d-desktop {
         width: 100%;
       }
       .contentWraps {
@@ -1053,9 +1153,9 @@ ul {
         opacity: 1;
         height: 1.5rem;
         width: 1.5rem;
-        @include x-767-tablet{
-          height: .8rem;
-          width: .8rem;
+        @include x-767-tablet {
+          height: 0.8rem;
+          width: 0.8rem;
         }
       }
 
@@ -1079,8 +1179,6 @@ ul {
           width: 100%;
         }
       }
-
-     
 
       @media (max-width: 767px) {
         .swiper-container {
@@ -1107,23 +1205,23 @@ ul {
   position: relative;
   background: #ffeeee;
   overflow: hidden;
-  @include md-tablet{
-    padding: 6rem 2rem 6rem;
+  @include md-tablet {
+    padding: 6rem 11rem 6rem;
   }
-  @include x-767-tablet{
+  @include x-767-tablet {
     padding: 3rem 2rem 3rem;
   }
   .achieveRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include md-tablet{
+    @include md-tablet {
       flex-direction: column-reverse;
     }
     .leftboxImgWrap {
       text-align: center;
       padding-bottom: 7rem;
-      @include md-tablet{
+      @include md-tablet {
         padding-bottom: 0;
       }
       img {
@@ -1132,12 +1230,12 @@ ul {
       }
     }
     .aciveRightBoxWrap {
-      @include md-tablet{
+      @include md-tablet {
         margin-bottom: 8rem;
       }
       .contentWraps {
         @include contentBox;
-        @include md-tablet{
+        @include md-tablet {
           text-align: center;
         }
       }
@@ -1146,12 +1244,12 @@ ul {
         ul {
           display: flex;
           gap: 2rem;
-          @include md-tablet{
+          @include md-tablet {
             justify-content: center;
           }
-          li{
-            a{
-              img{
+          li {
+            a {
+              img {
                 width: 100%;
               }
             }
@@ -1209,10 +1307,10 @@ ul {
 #testimonialSection {
   background-color: #fff;
   padding: 19rem 11rem 18rem;
-  @include md-tablet{
-    padding: 6rem 2rem 25rem;
+  @include md-tablet {
+    padding: 6rem 11rem 32rem;
   }
-  @include x-767-tablet{
+  @include x-767-tablet {
     padding: 3rem 2rem 27rem;
   }
   .testimonialRow {
@@ -1220,14 +1318,14 @@ ul {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    @include md-tablet{
+    @include md-tablet {
       flex-direction: column;
-        gap: 24rem;
+      gap: 24rem;
     }
     .aciveRightBoxWrap {
       .contentWraps {
         @include contentBox;
-        @include md-tablet{
+        @include md-tablet {
           text-align: center;
         }
       }
@@ -1249,7 +1347,10 @@ ul {
       height: 13rem;
       top: -70px;
       left: -15%;
-      @include x-767-tablet{
+      @include d-desktop {
+        height: 17rem;
+      }
+      @include x-767-tablet {
         padding: 15px 10px;
         height: 16rem;
       }
@@ -1263,11 +1364,11 @@ ul {
     .details {
       .userDetailsWrap {
         justify-content: space-between;
-        @include x-767-tablet{
+        @include x-767-tablet {
           gap: 1rem;
         }
-        .justify-content-end{
-          @include x-767-tablet{
+        .justify-content-end {
+          @include x-767-tablet {
             justify-content: flex-start !important;
           }
         }
@@ -1315,7 +1416,7 @@ ul {
             i {
               font-size: 1.6rem;
               color: #6d2323;
-              @include x-767-tablet{
+              @include x-767-tablet {
                 font-size: 1.2rem;
               }
             }
@@ -1333,7 +1434,7 @@ ul {
           // width: 90%;
           // overflow: hidden;
           // text-overflow: ellipsis;
-          @include x-767-tablet{
+          @include x-767-tablet {
             font-size: 1.2rem;
           }
         }
@@ -1376,17 +1477,17 @@ ul {
   width: 100%;
   height: auto;
   padding: 8rem 11rem 10rem;
-  @include md-tablet{
+  @include md-tablet {
     padding: 6rem 2rem 7rem;
   }
-  @include x-767-tablet{
+  @include x-767-tablet {
     padding: 3rem 2rem 4rem;
   }
   .plansRow {
     .aciveRightBoxWrap {
       width: 40%;
       margin: 0 auto;
-      @include md-tablet{
+      @include d-desktop {
         width: 100%;
       }
       .contentWraps {
@@ -1399,7 +1500,7 @@ ul {
     .cardsRow {
       width: 70%;
       margin: 0 auto;
-      @include md-tablet{
+      @include d-desktop {
         width: 100%;
       }
       .pCard_card {
@@ -3146,13 +3247,13 @@ ul {
   @include d-desktop {
     padding: 3rem 4rem 7rem;
   }
-  @include md-tablet{
+  @include md-tablet {
     padding: 3rem 2rem 3rem;
   }
   @include x-767-tablet {
     padding: 3rem 1.5rem 5rem;
   }
-  @include x-767-tablet{
+  @include x-767-tablet {
     padding: 3rem 1.5rem 0rem;
   }
   .footerContainer {
@@ -3289,7 +3390,7 @@ ul {
               font-weight: 300;
               line-height: 1.5;
               color: #fff;
-              @include x-767-tablet{
+              @include x-767-tablet {
                 text-align: center;
               }
               a {
@@ -4761,4 +4862,217 @@ ul {
       }
     }
   }
+}
+
+// Modal Form CSS Start
+.commonForm {
+  .modal-dialog {
+    .modal-content {
+      padding: 5rem 5rem 5rem 5rem;
+      border-radius: 0.8rem;
+      background-color: #ffe1e1;
+      @include modalCloseButton;
+      .modal-body {
+        background: #fff;
+        padding: 3rem 5rem;
+        border-radius: 0.8rem;
+        h5 {
+          font-size: 3rem;
+          font-weight: 600;
+          color: #1a1818;
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+        form {
+          .form-floating {
+            .showPswd{
+              position: absolute;
+              right: 2rem;
+              top: 50%;
+              transform: translateY(-50%);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 2rem;
+              height: 2rem;
+              cursor: pointer;
+              i{
+                font-size: 1.8rem;
+                color: #565656;
+              }
+            }
+            .form-control {
+              border: 0.1rem solid #a8a8a8;
+              border-radius: 0.4rem;
+              height: 4.8rem;
+              color: #989898;
+              font-size: 1.6rem;
+              font-weight: 400;
+              position: relative;
+              
+              &:focus{
+                outline: none;
+                box-shadow: none;
+              }
+              &:focus {
+                & ~ label {
+                  top: 3px;
+                  transform: scale(0.65) translateY(-1.2rem) translateX(0.15rem);
+                  font-size: 1.8rem;
+                  font-weight: 500;
+                  color:#470c0c;
+                  opacity: 1;              
+                }
+              }
+              &:not(:placeholder-shown) {
+                ~ label,
+                .form-floating > .form-select ~ label {
+                  opacity: 0.65;
+                  transform: scale(0.65) translateY(-1.2rem) translateX(0.15rem);
+                  font-size: 1.8rem;
+                  font-weight: 500;
+                  color:#470c0c;
+                  opacity: 1;              
+                }
+              }
+            }
+            label {
+              top: 3px;
+              color: #989898;
+              font-size: 1.6rem;
+              font-weight: 400;
+            }
+          }
+          .frgtPswdWrap {
+            text-align: right;
+
+            a {
+              font-size: 1.4rem;
+              font-weight: 400;
+              color: #989898;
+            }
+            .resendOTPText{
+              color: #440c0c;
+              font-weight: 600;
+            }
+          }
+          .tagLabel{
+            font-size: 1.6rem;
+            color: #494848;
+            font-weight: 400;
+          }
+          .btnLogin {
+            height: 4.8rem;
+            background: #470c0c;
+            border-radius: 0.4rem;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 500;
+            &:hover {
+              background-color: #ffe1e1;
+              color: #6d2323;
+            }
+            &:focus{
+              outline: none;
+              box-shadow: none;
+            }
+          }
+          .form-check-label {
+            font-size: 1.4rem;
+            color: #989898;
+            font-weight: 400;
+            line-height: 2;
+            cursor: pointer;
+          }
+          .form-check-input[type="checkbox"] {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.5rem;
+          }
+          .form-check-input:focus{
+            outline: none;
+            box-shadow: none;
+          }
+          .form-check-input:checked {
+            background-color: rgb(71 12 12);
+            border-color: rgb(71 12 12);
+          }
+          .regBtnWrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding-top: 2rem;
+            &.noPsedo{
+              &::before, &::after{
+                content: none;
+              }
+              .btnReg{
+                width: 60%;
+                background-color: #470c0c;
+                color: #fff;
+              }
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              width: 25%;
+              height: 0.1rem;
+              background-color: #d6d6d6;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              width: 25%;
+              height: 0.1rem;
+              background-color: #d6d6d6;
+            }
+            .btnReg {
+              background-color: #ffe1e1;
+              width: 14rem;
+              height: 4rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.6rem;
+              font-weight: 500;
+              color: #6d2323;
+              border-radius: 0.4rem;
+              &:focus{
+                outline: none;
+                box-shadow: none;
+              }
+              &.loginBtns{
+                background-color: #ffe1e1;
+                color: #6d2323;
+               
+                &:hover {
+                  background-color: #470c0c;
+                  color: #fff;
+                }
+              }
+              &:hover {
+                background-color: #470c0c;
+                color: #fff;
+              }
+            }
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

@@ -399,3 +399,4 @@ button.addEventListener("click", () => {
 picker.on("emoji", (emoji) => {
   document.querySelector("#msg-input").value += emoji;
 });
+

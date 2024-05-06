@@ -54,7 +54,10 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+                  <i class="fa fa-bars icon-menu"></i>
+                  <i class="fa fa-times crossBtn"></i>
+                </span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
@@ -71,7 +74,12 @@
                   </li>
                 </ul>
                 <div class="btnWrap">
-                  <a href="#" class="btn getLinkBtn"
+                  <a
+                    href="#"
+                    class="btn getLinkBtn"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginForm"
                     >Login
                     <span class="arrowBtnSpan"
                       ><svg
@@ -93,12 +101,358 @@
         </div>
       </header>
     </section>
+    <!-- Login Modal Start-->
+    <div
+      class="modal fade commonForm"
+      id="loginForm"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="loginFormLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path
+                  d="M9.16242 5.66242L7.82483 7L9.16242 8.33758C9.3905 8.56567 9.3905 8.93433 9.16242 9.16242C9.04867 9.27617 8.89933 9.33333 8.75 9.33333C8.60067 9.33333 8.45133 9.27617 8.33758 9.16242L7 7.82483L5.66242 9.16242C5.54867 9.27617 5.39933 9.33333 5.25 9.33333C5.10067 9.33333 4.95133 9.27617 4.83758 9.16242C4.6095 8.93433 4.6095 8.56567 4.83758 8.33758L6.17517 7L4.83758 5.66242C4.6095 5.43433 4.6095 5.06567 4.83758 4.83758C5.06567 4.6095 5.43433 4.6095 5.66242 4.83758L7 6.17517L8.33758 4.83758C8.56567 4.6095 8.93433 4.6095 9.16242 4.83758C9.3905 5.06567 9.3905 5.43433 9.16242 5.66242ZM14 7C14 10.8599 10.8599 14 7 14C3.14008 14 0 10.8599 0 7C0 3.14008 3.14008 0 7 0C10.8599 0 14 3.14008 14 7ZM12.8333 7C12.8333 3.7835 10.2165 1.16667 7 1.16667C3.7835 1.16667 1.16667 3.7835 1.16667 7C1.16667 10.2165 3.7835 12.8333 7 12.8333C10.2165 12.8333 12.8333 10.2165 12.8333 7Z"
+                  fill="#470C0C"
+                ></path>
+              </svg>
+            </span>
+          </button>
+
+          <div class="modal-body">
+            <h5>Login Now</h5>
+            <form action="">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="name@example.com"
+                    />
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="floatingPassword"
+                      placeholder="Password"
+                    />
+                    <span class="showPswd">
+                      <i class="fa fa-eye"></i>
+                    </span>
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div class="mb-3 frgtPswdWrap">
+                    <a href="#" class="forgotPass" data-bs-toggle="modal"
+                    data-bs-target="#forgetPswdModal">Forgot Password?</a>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btnLogin w-100 mb-3">
+                    Login
+                  </button>
+                </div>
+                <div class="col-12">
+                  <div class="form-check mb-3">
+                    <label class="form-check-label" for="gridCheck">
+                      Keep me Logged in
+                    </label>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="gridCheck"
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <p class="mt-5 text-center mb-0 tagLabel">
+                    Do not have an account?
+                  </p>
+                  <div class="regBtnWrap">
+                    <button
+                      type="button"
+                      class="btn btnReg"
+                      data-bs-toggle="modal"
+                      data-bs-target="#registrationModal"
+                    >
+                      Register Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login Modal End-->
+    <!-- Registration Modal Start -->
+    <div
+      class="modal fade commonForm"
+      id="registrationModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="registrationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path
+                  d="M9.16242 5.66242L7.82483 7L9.16242 8.33758C9.3905 8.56567 9.3905 8.93433 9.16242 9.16242C9.04867 9.27617 8.89933 9.33333 8.75 9.33333C8.60067 9.33333 8.45133 9.27617 8.33758 9.16242L7 7.82483L5.66242 9.16242C5.54867 9.27617 5.39933 9.33333 5.25 9.33333C5.10067 9.33333 4.95133 9.27617 4.83758 9.16242C4.6095 8.93433 4.6095 8.56567 4.83758 8.33758L6.17517 7L4.83758 5.66242C4.6095 5.43433 4.6095 5.06567 4.83758 4.83758C5.06567 4.6095 5.43433 4.6095 5.66242 4.83758L7 6.17517L8.33758 4.83758C8.56567 4.6095 8.93433 4.6095 9.16242 4.83758C9.3905 5.06567 9.3905 5.43433 9.16242 5.66242ZM14 7C14 10.8599 10.8599 14 7 14C3.14008 14 0 10.8599 0 7C0 3.14008 3.14008 0 7 0C10.8599 0 14 3.14008 14 7ZM12.8333 7C12.8333 3.7835 10.2165 1.16667 7 1.16667C3.7835 1.16667 1.16667 3.7835 1.16667 7C1.16667 10.2165 3.7835 12.8333 7 12.8333C10.2165 12.8333 12.8333 10.2165 12.8333 7Z"
+                  fill="#470C0C"
+                ></path>
+              </svg>
+            </span>
+          </button>
+
+          <div class="modal-body">
+            <h5>Registration Now</h5>
+            <form action="">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="First Name"
+                    />
+                    <label for="floatingInput">First Name</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="floatingmidName"
+                      placeholder="Middle Name"
+                    />
+                    <label for="floatingmidName">Middle Name</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="floatingLastName"
+                      placeholder="Last Name"
+                    />
+                    <label for="floatingLastName">Last Name</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="Email address"
+                    />
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="floatingInputNumber"
+                      placeholder="Mobile No"
+                    />
+                    <label for="floatingInputNumber">Mobile No</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <select
+                      class="form-select form-control"
+                      id="floatingSelect"
+                      aria-label="Floating label select"
+                    >
+                      <option value="1" selected>Male</option>
+                      <option value="2">Female</option>
+                      <option value="3">Other</option>
+                    </select>
+                    <label for="floatingSelect">Select Gender</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="floatingInputDate"
+                      placeholder="Mobile No"
+                    />
+                    <label for="floatingInputDate">Date of Birth</label>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="form-check mb-3 ps-0">
+                    <div
+                      class="g-recaptcha"
+                      data-sitekey="6LdzAOQZAAAAAPvuTz828mXxQiSlbRtli0TCXD0a"
+                    ></div>
+                  </div>
+                </div>
+                <div class="col-8 mx-auto">
+                  <div class="regBtnWrap noPsedo">
+                    <button type="submit" class="btn btnReg">Register</button>
+                  </div>
+                </div>
+                <div class="col-6 mx-auto">
+                  <p class="mt-5 text-center mb-0 tagLabel">
+                    Already have an account?
+                  </p>
+                  <div class="regBtnWrap">
+                    <button
+                      type="button"
+                      class="btn btnReg loginBtns"
+                      data-bs-toggle="modal"
+                      data-bs-target="#loginForm"
+                    >
+                      Login Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Registration Modal End -->
+    <!-- Forget Password Modal Start -->
+    <div
+      class="modal fade commonForm"
+      id="forgetPswdModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="forgetPswdModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path
+                  d="M9.16242 5.66242L7.82483 7L9.16242 8.33758C9.3905 8.56567 9.3905 8.93433 9.16242 9.16242C9.04867 9.27617 8.89933 9.33333 8.75 9.33333C8.60067 9.33333 8.45133 9.27617 8.33758 9.16242L7 7.82483L5.66242 9.16242C5.54867 9.27617 5.39933 9.33333 5.25 9.33333C5.10067 9.33333 4.95133 9.27617 4.83758 9.16242C4.6095 8.93433 4.6095 8.56567 4.83758 8.33758L6.17517 7L4.83758 5.66242C4.6095 5.43433 4.6095 5.06567 4.83758 4.83758C5.06567 4.6095 5.43433 4.6095 5.66242 4.83758L7 6.17517L8.33758 4.83758C8.56567 4.6095 8.93433 4.6095 9.16242 4.83758C9.3905 5.06567 9.3905 5.43433 9.16242 5.66242ZM14 7C14 10.8599 10.8599 14 7 14C3.14008 14 0 10.8599 0 7C0 3.14008 3.14008 0 7 0C10.8599 0 14 3.14008 14 7ZM12.8333 7C12.8333 3.7835 10.2165 1.16667 7 1.16667C3.7835 1.16667 1.16667 3.7835 1.16667 7C1.16667 10.2165 3.7835 12.8333 7 12.8333C10.2165 12.8333 12.8333 10.2165 12.8333 7Z"
+                  fill="#470C0C"
+                ></path>
+              </svg>
+            </span>
+          </button>
+
+          <div class="modal-body">
+            <h5>Forgot Password</h5>
+            <form action="">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="floatingInputMobile"
+                      placeholder="Mobile Number"
+                    />
+                    <label for="floatingInputMobile">Mobile Number or Email ID</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <button type="submit" class="btn btnLogin w-100 mb-3">
+                      Submit
+                    </button>
+                  </div>
+                  
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="floatingInputgetOtp"
+                      placeholder="Enter OTP"
+                    />
+                    <label for="floatingInputgetOtp">Enter OTP</label>
+                    <div class="mb-3 frgtPswdWrap">
+                      <a href="#" class="forgotPass resendOTPText">Resend OTP</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <button type="submit" class="btn btnLogin w-100">
+                      Submit OTP
+                    </button>
+                  </div>
+                  
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Forget Password Modal End -->
     <!-- Header Section End -->
 
     <!-- Home Page Start -->
     <section id="bannerSection">
       <div class="bannerContentWrap">
-        <div class="col-md-12 col-lg-6 col-12">
+        <div class="col-md-12 col-lg-10 col-xl-6 col-12">
           <div class="bannerLefBox">
             <h1>Find your perfect match here!</h1>
             <p>
@@ -124,7 +478,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-lg-4 col-12">
+        <div class="col-md-12 col-lg-10 col-xl-5 col-12">
           <div class="bannerRightBox">
             <div class="formTopWrap">
               <h2>Search your preference..</h2>
@@ -548,7 +902,7 @@
     <main id="redirectSection">
       <section id="achievmentSection">
         <div class="achieveRow">
-          <div class="col-md-12 col-lg-5 col-12">
+          <div class="col-md-12 col-lg-5 col-xl-6 col-12">
             <div class="leftboxImgWrap">
               <img
                 src="./assets/images/body/couple-img.png"
@@ -557,7 +911,7 @@
               />
             </div>
           </div>
-          <div class="col-md-12 col-lg-6 col-12">
+          <div class="col-md-12 col-lg-12 col-xl-6 col-12">
             <div class="aciveRightBoxWrap">
               <div class="contentWraps">
                 <span class="scetionHighlights"> Achievement </span>
@@ -664,7 +1018,7 @@
     <!-- About Us Section Start -->
     <section id="aboutUsSection">
       <div class="abtRow">
-        <div class="col-md-12 col-lg-6 col-12">
+        <div class="col-md-12 col-lg-12 col-xl-6 col-12">
           <div class="aciveRightBoxWrap">
             <div class="contentWraps">
               <span class="scetionHighlights"> About us </span>
@@ -683,7 +1037,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-lg-6 col-12">
+        <div class="col-md-12 col-lg-6 col-xl-6 col-12">
           <div class="parent-wrapper">
             <div class="c-circlet">
               <div class="c-circlet_item box">
@@ -3014,6 +3368,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="./assets/js/main.js"></script>
     <script>
       AOS.init();
@@ -3054,6 +3409,31 @@
         if (window.innerWidth < 767) swiper.params.slidesPerView = 1;
         swiper.update();
       }
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".navbar-toggler").click(function () {
+          $(".icon-menu").toggleClass("hide");
+          $(".crossBtn").toggleClass("hide");
+          $("#homePage").toggleClass("overflow-hidden");
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".showPswd").click(function () {
+          var passwordField = $("#floatingPassword");
+          var fieldType = passwordField.attr("type");
+
+          if (fieldType === "password") {
+            passwordField.attr("type", "text");
+            $(".showPswd i").removeClass("fa-eye").addClass("fa-eye-slash");
+          } else {
+            passwordField.attr("type", "password");
+            $(".showPswd i").removeClass("fa-eye-slash").addClass("fa-eye");
+          }
+        });
+      });
     </script>
   </body>
 </html>
