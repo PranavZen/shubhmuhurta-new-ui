@@ -5799,9 +5799,9 @@ ul li {
   position: relative;
   border-radius: 1.2rem;
 }
-@media screen and (max-width: 735px) {
+@media (max-width: 767px) {
   #frame #sidepanel {
-    width: 58px;
+    width: 22%;
     min-width: 58px;
   }
 }
@@ -5864,6 +5864,12 @@ ul li {
   font-weight: 500;
   color: #5f5f5f;
 }
+@media (max-width: 767px) {
+  #frame #sidepanel .titleBox h5 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
 #frame #sidepanel #search {
   border: 1px solid #470c0c;
   position: relative;
@@ -5902,6 +5908,11 @@ ul li {
   overflow-x: hidden;
   padding-bottom: 10rem;
 }
+@media (max-width: 1024px) {
+  #frame #sidepanel #contacts {
+    padding-bottom: 73rem;
+  }
+}
 @media screen and (max-width: 735px) {
   #frame #sidepanel #contacts::-webkit-scrollbar {
     display: none;
@@ -5925,9 +5936,12 @@ ul li {
   border-radius: 1.2rem;
   background-color: #fff;
 }
-@media screen and (max-width: 735px) {
+@media (max-width: 767px) {
   #frame #sidepanel #contacts ul li.contact {
-    padding: 6px 0 46px 8px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 #frame #sidepanel #contacts ul li.contact:hover {
@@ -6031,12 +6045,16 @@ ul li {
 @media screen and (max-width: 735px) {
   #frame .content {
     width: calc(100% - 58px);
-    min-width: 300px !important;
   }
 }
 @media screen and (min-width: 900px) {
   #frame .content {
     width: calc(100% - 350px);
+  }
+}
+@media (max-width: 767px) {
+  #frame .content {
+    width: calc(100% - 90px);
   }
 }
 #frame .content .contact-profile {
@@ -6056,6 +6074,11 @@ ul li {
   width: 50%;
   gap: 1rem;
 }
+@media (max-width: 767px) {
+  #frame .content .contact-profile .leftPart {
+    width: 100%;
+  }
+}
 #frame .content .contact-profile .leftPart img {
   width: 50px;
   border-radius: 50%;
@@ -6069,11 +6092,21 @@ ul li {
   color: #6d2323;
   margin-bottom: 0;
 }
+@media (max-width: 767px) {
+  #frame .content .contact-profile .leftPart .userNameWrapBox h6 {
+    font-size: 1.4rem;
+  }
+}
 #frame .content .contact-profile .leftPart .userNameWrapBox p {
   margin-bottom: 0;
   font-size: 1.4rem;
   color: #888888;
   font-weight: 400;
+}
+@media (max-width: 767px) {
+  #frame .content .contact-profile .leftPart .userNameWrapBox p {
+    font-size: 1.2rem;
+  }
 }
 #frame .content .contact-profile .social-media span {
   display: flex;
@@ -6258,6 +6291,11 @@ ul li {
   border-radius: 0.8rem;
   background-color: #ffe1e1;
 }
+@media (max-width: 767px) {
+  .commonForm .modal-dialog .modal-content {
+    padding: 5rem 1rem 5rem 1rem;
+  }
+}
 .commonForm .modal-dialog .modal-content .btn-close {
   position: absolute;
   right: 1rem;
@@ -6277,6 +6315,11 @@ ul li {
   background: #fff;
   padding: 3rem 5rem;
   border-radius: 0.8rem;
+}
+@media (max-width: 767px) {
+  .commonForm .modal-dialog .modal-content .modal-body {
+    padding: 3rem 1.5rem;
+  }
 }
 .commonForm .modal-dialog .modal-content .modal-body h5 {
   font-size: 3rem;
